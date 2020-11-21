@@ -11,4 +11,13 @@ public class KeybindUIBox : MonoBehaviour
 
     // private string _prevActionName = "";
     // private string _prevKeyName = "";
+
+    void Start()
+    {
+        if (InputManager._inst != null)
+        {
+            keyName.text = InputManager._inst._keyBindings[_action].ToString();
+            actionName.text = _action.ToString();
+        }
+    }
 }
